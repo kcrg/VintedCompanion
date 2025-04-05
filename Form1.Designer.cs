@@ -29,42 +29,28 @@
         private void InitializeComponent()
         {
             btnProcess = new Button();
-            btnExportExcel = new Button();
             statusLabel = new Label();
             SuspendLayout();
             // 
             // btnProcess
             // 
-            btnProcess.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            btnProcess.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             btnProcess.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnProcess.Location = new Point(41, 41);
             btnProcess.Margin = new Padding(32);
             btnProcess.Name = "btnProcess";
-            btnProcess.Size = new Size(718, 170);
+            btnProcess.Size = new Size(718, 211);
             btnProcess.TabIndex = 0;
             btnProcess.Text = "Wybierz plik *.html z Vinted";
             btnProcess.UseVisualStyleBackColor = true;
             btnProcess.Click += btnProcess_Click;
-            // 
-            // btnExportExcel
-            // 
-            btnExportExcel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            btnExportExcel.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnExportExcel.Location = new Point(41, 251);
-            btnExportExcel.Margin = new Padding(32);
-            btnExportExcel.Name = "btnExportExcel";
-            btnExportExcel.Size = new Size(718, 170);
-            btnExportExcel.TabIndex = 1;
-            btnExportExcel.Text = "Wygeneruj plik Excel *.xlsx";
-            btnExportExcel.UseVisualStyleBackColor = true;
-            btnExportExcel.Click += btnExportExcel_Click;
             // 
             // statusLabel
             // 
             statusLabel.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             statusLabel.AutoSize = true;
             statusLabel.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            statusLabel.Location = new Point(12, 443);
+            statusLabel.Location = new Point(12, 284);
             statusLabel.Name = "statusLabel";
             statusLabel.Size = new Size(69, 28);
             statusLabel.TabIndex = 2;
@@ -74,9 +60,8 @@
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 480);
+            ClientSize = new Size(800, 321);
             Controls.Add(statusLabel);
-            Controls.Add(btnExportExcel);
             Controls.Add(btnProcess);
             Name = "Form1";
             Text = "Vinted Generator";
@@ -87,7 +72,6 @@
         #endregion
 
         private Button btnProcess;
-        private Button btnExportExcel;
         private Label statusLabel;
     }
 }
