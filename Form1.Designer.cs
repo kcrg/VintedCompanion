@@ -64,6 +64,7 @@
             Controls.Add(statusLabel);
             Controls.Add(btnProcess);
             Name = "Form1";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Vinted Generator";
             ResumeLayout(false);
             PerformLayout();

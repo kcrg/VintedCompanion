@@ -28,6 +28,8 @@ public partial class Form1 : Form
         }
 
         ExportExcel();
+
+        transactions.Clear();
     }
 
     private async Task ProcessHtml()
@@ -257,7 +259,7 @@ public partial class Form1 : Form
                 statusLabel.Text = $"Status: Zapisano plik Excel w {sfd.FileName}";
 
                 // Wyświetlamy komunikat z przyciskiem "Tak" umożliwiającym otwarcie pliku
-                DialogResult result = MessageBox.Show("Plik Excel został zapisany.\nCzy chcesz go otworzyć?", "Sukces", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                DialogResult result = MessageBox.Show("Plik Excel został zapisany. Czy chcesz go otworzyć?", "Sukces", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (result == DialogResult.Yes)
                 {
                     Process.Start(new ProcessStartInfo
@@ -269,9 +271,10 @@ public partial class Form1 : Form
             }
             catch (Exception)
             {
+                transactions.Clear();
                 statusLabel.Text = "Status: Ostatni eksport danych do pliku Excel zakończony niepowodzeniem.";
 
-                MessageBox.Show("Nie udało się otworzyć/zapisać pliku.\nZadzwoń do Kacpra, i wyślij mu tekst z okienka, które pojawi się po tym jak wciśniesz OK.", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Nie udało się otworzyć/zapisać pliku.\n\nZadzwoń do Kacpra, wyślij mu tekst z okienka, które pojawi się po tym jak wciśniesz OK i rozwiniesz szczegóły w kolejnym okienku.", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 throw;
             }
         }
